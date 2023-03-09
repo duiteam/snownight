@@ -1,0 +1,333 @@
+fileFormatVersion: 2
+guid: 3d12cad16219f4afe8da22def1a06ad5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3890927340157898577
+    second: snowman_front
+  - first:
+      213: -4650935894319457
+    second: snowman_4
+  - first:
+      213: -7686202315340627061
+    second: snowman_3
+  - first:
+      213: -5877225852943743422
+    second: snowman_2
+  - first:
+      213: 4793782148570310912
+    second: snowman_1
+  - first:
+      213: -1902042640447476195
+    second: snowman_0
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 132, y: 94, z: 3348, w: 193}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: snowman_front
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 98
+        width: 496
+        height: 685
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0780bf236a00ac0800000000000000
+      internalID: -3890927340157898577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snowman_4
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 97
+        width: 499
+        height: 687
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e552a9ff97feff0800000000000000
+      internalID: -4650935894319457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snowman_3
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 91
+        width: 408
+        height: 643
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83465aa7bf155590800000000000000
+      internalID: -7686202315340627061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snowman_2
+      rect:
+        serializedVersion: 2
+        x: 1897
+        y: 96
+        width: 367
+        height: 577
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 246cb82c936ef6ea0800000000000000
+      internalID: -5877225852943743422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snowman_1
+      rect:
+        serializedVersion: 2
+        x: 2396
+        y: 95
+        width: 328
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0096420377fe68240800000000000000
+      internalID: 4793782148570310912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: snowman_0
+      rect:
+        serializedVersion: 2
+        x: 2815
+        y: 96
+        width: 288
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e6b74cb469a95e0800000000000000
+      internalID: -1902042640447476195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -1714.8436, y: 285.15625}
+      - {x: -1865.2343, y: 124.99999}
+      - {x: -1865.2343, y: -392.5781}
+      - {x: -1857.4218, y: -404.29684}
+      - {x: -1419.9218, y: -404.29684}
+      - {x: -1365.2343, y: -384.7656}
+      - {x: -1365.2343, y: 95.70312}
+      - {x: -1523.4374, y: 285.15625}
+    - - {x: -1150.3906, y: 285.15625}
+      - {x: -1275.3906, y: -29.296873}
+      - {x: -1275.3906, y: -404.29684}
+      - {x: -775.39056, y: -404.29684}
+      - {x: -775.39056, y: -76.171875}
+      - {x: -863.2812, y: 285.15625}
+    - - {x: -291.01562, y: 15.624999}
+      - {x: -294.92188, y: 11.718749}
+      - {x: -277.34375, y: 31.249998}
+      - {x: -294.92188, y: 203.12498}
+      - {x: -359.37497, y: 234.37498}
+      - {x: -484.37497, y: 234.37498}
+      - {x: -544.9219, y: 183.59373}
+      - {x: -599.6094, y: 35.15625}
+      - {x: -634.7656, y: -27.343748}
+      - {x: -634.7656, y: -357.42184}
+      - {x: -619.1406, y: -404.29684}
+      - {x: -238.28123, y: -404.29684}
+      - {x: -224.60936, y: -378.90622}
+      - {x: -224.60936, y: 5.8593745}
+      - {x: -255.85936, y: 48.82812}
+    - - {x: 218.74998, y: -44.92187}
+      - {x: 214.84373, y: -48.82812}
+      - {x: 228.51561, y: -25.390623}
+      - {x: 232.42186, y: 162.10936}
+      - {x: 197.26561, y: 175.78123}
+      - {x: -27.343748, y: 175.78123}
+      - {x: -105.46874, y: 48.82812}
+      - {x: -105.46874, y: -396.48434}
+      - {x: -103.51562, y: -404.29684}
+      - {x: 210.93748, y: -404.29684}
+      - {x: 265.625, y: -367.18747}
+      - {x: 265.625, y: -50.781246}
+      - {x: 253.90623, y: -41.01562}
+    - - {x: 685.5468, y: -128.90625}
+      - {x: 695.31244, y: 78.125}
+      - {x: 654.2968, y: 95.70312}
+      - {x: 453.12497, y: 95.70312}
+      - {x: 394.53122, y: -39.0625}
+      - {x: 394.53122, y: -371.09372}
+      - {x: 443.35934, y: -404.29684}
+      - {x: 681.64056, y: -404.29684}
+      - {x: 724.6093, y: -353.5156}
+      - {x: 724.6093, y: -109.37499}
+      - {x: 689.45306, y: -124.99999}
+    - - {x: 880.8593, y: -44.92187}
+      - {x: 851.56244, y: -107.42187}
+      - {x: 814.45306, y: -232.42186}
+      - {x: 814.45306, y: -312.5}
+      - {x: 826.1718, y: -404.29684}
+      - {x: 1105.4688, y: -404.29684}
+      - {x: 1105.4688, y: -58.593746}
+      - {x: 1056.6406, y: -44.92187}
+    - - {x: 1261.7188, y: 285.15625}
+      - {x: 1183.5938, y: 126.95312}
+      - {x: 1183.5938, y: -351.56247}
+      - {x: 1220.7031, y: -404.29684}
+      - {x: 1685.5468, y: -404.29684}
+      - {x: 1685.5468, y: 152.34375}
+      - {x: 1550.7811, y: 285.15625}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
