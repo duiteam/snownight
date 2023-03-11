@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public enum PlayerSnowInventory
@@ -33,7 +34,21 @@ public static class PlayerSnowInventoryExtensions
             PlayerSnowInventory.One => new Vector3(1.0f, 0.7f, 1.0f),
             PlayerSnowInventory.Two => new Vector3(1.0f, 0.8f, 1.0f),
             PlayerSnowInventory.Three => new Vector3(1.0f, 0.9f, 1.0f),
-            PlayerSnowInventory.Four => new Vector3(1.0f, 1.0f, 1.0f)
+            PlayerSnowInventory.Four => new Vector3(1.0f, 1.0f, 1.0f),
+            _ => throw new ArgumentOutOfRangeException(nameof(inventory), inventory, null)
+        };
+    }
+    
+    public static Sprite ToSprite(this PlayerSnowInventory inventory)
+    {
+        return inventory switch
+        {
+            PlayerSnowInventory.None => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_0"),
+            PlayerSnowInventory.One => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_1"),
+            PlayerSnowInventory.Two => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_2"),
+            PlayerSnowInventory.Three => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_3"),
+            PlayerSnowInventory.Four => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_4"),
+            _ => throw new ArgumentOutOfRangeException(nameof(inventory), inventory, null)
         };
     }
 
