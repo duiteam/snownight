@@ -20,6 +20,9 @@ TextureImporter:
   - first:
       213: 7782697485915144779
     second: Lava
+  - first:
+      213: 5735738129519079201
+    second: SingleSpike
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -230,12 +233,12 @@ TextureImporter:
       name: Lava
       rect:
         serializedVersion: 2
-        x: 899
+        x: 902
         y: 1561
-        width: 363
-        height: 181
+        width: 355
+        height: 178
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -243,6 +246,27 @@ TextureImporter:
       bones: []
       spriteID: b424c420122b10c60800000000000000
       internalID: 7782697485915144779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SingleSpike
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1020
+        width: 313
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12fe5a6807f699f40800000000000000
+      internalID: 5735738129519079201
       vertices: []
       indices: 
       edges: []
