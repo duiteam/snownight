@@ -41,6 +41,9 @@ TextureImporter:
   - first:
       213: 4372148480733514280
     second: GroundNoSnow
+  - first:
+      213: 8900154682771799127
+    second: Door
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
@@ -411,6 +414,27 @@ TextureImporter:
       bones: []
       spriteID: 82a826be0edfcac30800000000000000
       internalID: 4372148480733514280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Door
+      rect:
+        serializedVersion: 2
+        x: 2608
+        y: 2964
+        width: 141
+        height: 649
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75c74a86783b38b70800000000000000
+      internalID: 8900154682771799127
       vertices: []
       indices: 
       edges: []
