@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level1-2.unity
     guid: 9f3c19b9b6131ec4492e5b3ed0d3ba22
   - enabled: 1
+    path: Assets/Scenes/Level1-3.unity
+    guid: cd00bf0c24680ea4eaf4c08db919b2b3
+  - enabled: 1
     path: Assets/Scenes/ScratchpadScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
