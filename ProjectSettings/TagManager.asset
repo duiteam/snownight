@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Env::Ground
   - Env::NonCollidable
+  - Collidable::CollectableSnow
   layers:
   - Default
   - TransparentFX

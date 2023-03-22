@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f48b9b69f09c4283b4aeec11807ffce, type: 3}
   m_Name: GlobalPlayerSharedState
   m_EditorClassIdentifier: 
-  snowInventory: 4

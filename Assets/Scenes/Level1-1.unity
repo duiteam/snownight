@@ -1375,7 +1375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: -10}
+  m_LocalPosition: {x: -32.5, y: 6.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3552,11 +3552,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 7.5
-  playerSharedState: {fileID: 11400000, guid: 66807d7d1de0c4cf7a7c7a9fa9706f2e, type: 2}
   projectilePrefab: {fileID: 5869759568116855110, guid: 6df090d0090b71c44be6ba24600b6f05, type: 3}
   spittedSnowPrefab: {fileID: -1539985736401984890, guid: 94323b193d18b4b5caa67c40b755b4f1, type: 3}
   launchOffset: {fileID: 1146712136}
   orientation: 1
+  snowInventory: 4
 --- !u!212 &1434048014
 SpriteRenderer:
   m_ObjectHideFlags: 0

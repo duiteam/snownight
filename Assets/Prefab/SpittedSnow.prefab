@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2910860515364497565}
   - component: {fileID: 2910860515364497564}
   - component: {fileID: -1539985736401984890}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: SpittedSnow
-  m_TagString: Untagged
+  m_TagString: Collidable::CollectableSnow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

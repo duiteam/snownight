@@ -38,16 +38,34 @@ public static class PlayerSnowInventoryExtensions
             _ => throw new ArgumentOutOfRangeException(nameof(inventory), inventory, null)
         };
     }
-    
+
+    public static bool Increment(this ref PlayerSnowInventory inventory)
+    {
+        if (inventory >= PlayerSnowInventory.Four) return false;
+
+        inventory++;
+
+        return true;
+    }
+
+    public static bool Decrement(this ref PlayerSnowInventory inventory)
+    {
+        if (inventory <= PlayerSnowInventory.None) return false;
+
+        inventory--;
+
+        return true;
+    }
+
     public static Sprite ToSprite(this PlayerSnowInventory inventory)
     {
         return inventory switch
         {
-            PlayerSnowInventory.None => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_0"),
-            PlayerSnowInventory.One => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_1"),
-            PlayerSnowInventory.Two => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_2"),
-            PlayerSnowInventory.Three => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_3"),
-            PlayerSnowInventory.Four => Resources.Load<Sprite>("Sprites/Player/Snowmans/snowman_4"),
+            PlayerSnowInventory.None => Resources.Load<Sprite>("SeparateSprite/Snowman1"),
+            PlayerSnowInventory.One => Resources.Load<Sprite>("SeparateSprite/Snowman2"),
+            PlayerSnowInventory.Two => Resources.Load<Sprite>("SeparateSprite/Snowman3"),
+            PlayerSnowInventory.Three => Resources.Load<Sprite>("SeparateSprite/Snowman4"),
+            PlayerSnowInventory.Four => Resources.Load<Sprite>("SeparateSprite/Snowman5"),
             _ => throw new ArgumentOutOfRangeException(nameof(inventory), inventory, null)
         };
     }
@@ -70,5 +88,7 @@ public static class PlayerSnowInventoryExtensions
 public class PlayerSharedState : ScriptableObject
 {
     [Tooltip("PlayerSnowInventory is an enum that represents the amount of snow the player has.")]
+    // do not persist this value
+    [NonSerialized]
     public PlayerSnowInventory snowInventory = PlayerSnowInventory.Four;
 }
