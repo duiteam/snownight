@@ -8,8 +8,12 @@ public class GoalPickup : MonoBehaviour
         completeLevelUI.SetActive(true);
         Debug.Log("Level Won!");
     }
-    void OnTriggerEnter2D ()
+    void OnTriggerEnter2D (Collider2D collision)
     {
-        CompleteLevel();
+        if (collision.gameObject.tag == "Player")
+        {
+            CompleteLevel();
+        }
+        
     }
 }
