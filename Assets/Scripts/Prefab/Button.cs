@@ -17,7 +17,7 @@ public class Button : MonoBehaviour
         {
             Debug.Log("Push");
             requirement = true;
-        }  
+        }
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
@@ -28,4 +28,5 @@ public class Button : MonoBehaviour
             requirement = false;
         }
     }
+
 }
