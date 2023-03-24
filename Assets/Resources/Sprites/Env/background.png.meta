@@ -401,10 +401,10 @@ TextureImporter:
       name: GroundNoSnow
       rect:
         serializedVersion: 2
-        x: 2677
-        y: 176
-        width: 279
-        height: 190
+        x: 2686
+        y: 179
+        width: 269
+        height: 179
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,7 +427,7 @@ TextureImporter:
         width: 141
         height: 649
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
