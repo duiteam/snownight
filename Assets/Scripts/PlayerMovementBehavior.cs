@@ -111,6 +111,8 @@ public class PlayerMovementBehavior : MonoBehaviour
             if (snowInventory.Increment())
             {
                 UpdatePlayerState();
+                
+                m_CollidingSnow.GetComponent<SnowdriftBehavior>().CollectSnow();
             }
         }
     }
@@ -152,9 +154,9 @@ public class PlayerMovementBehavior : MonoBehaviour
             m_CollidingSnow = null;
         }
     }
-
+    
     // the player should change player states according to the snow inventory value
-    private void UpdatePlayerState()
+    public void UpdatePlayerState()
     {
         // change sprite
         var sprite = snowInventory.ToSprite();
