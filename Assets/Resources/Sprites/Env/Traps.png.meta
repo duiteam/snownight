@@ -16,7 +16,7 @@ TextureImporter:
     second: SnowBall
   - first:
       213: 5453249778156335981
-    second: SnowDrift
+    second: Snowdrift
   - first:
       213: 7782697485915144779
     second: Lava
@@ -209,7 +209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SnowDrift
+      name: Snowdrift
       rect:
         serializedVersion: 2
         x: 249

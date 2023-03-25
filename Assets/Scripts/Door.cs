@@ -6,29 +6,21 @@ public class Door : MonoBehaviour
 {
     public Sprite sp1, sp2;
     public Button button;
-    Collider2D collider;
+    
+    private Collider2D m_Collider;
+    private SpriteRenderer m_SpriteRenderer;
 
-    void Start()
+    private void Start()
     {
         button.requirement = false;
-        collider = GetComponent<Collider2D>();
+        m_Collider = GetComponent<Collider2D>();
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
+    
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        // When Button push, door open
-        if (button.requirement == true)
-        {
-            Debug.Log("open");
-            collider.enabled = false;
-            GetComponent<SpriteRenderer>().sprite = sp1;
-        }
-        // When Button not been push, door close
-        if (button.requirement == false)
-        {
-            Debug.Log("close");
-            collider.enabled = true;
-            GetComponent<SpriteRenderer>().sprite = sp2;
-        }
+        m_Collider.enabled = !button.requirement; 
+        m_SpriteRenderer.sprite = button.requirement ? sp1 : sp2;
     }
 }

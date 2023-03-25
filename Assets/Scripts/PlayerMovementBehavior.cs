@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -23,6 +24,8 @@ public class PlayerMovementBehavior : MonoBehaviour
     private BoxCollider2D m_Collider;
 
     private bool m_IsJumping;
+    private bool m_IsCollidingSnow = false;
+    private GameObject m_CollidingSnow = null;
 
     // cached component members
     private Rigidbody2D m_Rigidbody2D;
@@ -102,9 +105,17 @@ public class PlayerMovementBehavior : MonoBehaviour
 
                 UpdatePlayerState();
             }
+
+        if (m_IsCollidingSnow && Input.GetKeyDown(KeyCode.E))
+        {
+            if (snowInventory.Increment())
+            {
+                UpdatePlayerState();
+            }
+        }
     }
 
-    // on collision with the ground
+    // on collision enter
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Env::Ground")) m_IsJumping = false;
@@ -112,14 +123,34 @@ public class PlayerMovementBehavior : MonoBehaviour
         // pick up snow
         // if (Input.GetKeyDown(KeyCode.E))
         if (other.gameObject.CompareTag("Collidable::CollectableSnow"))
+        {
             // pick up snow
             if (snowInventory.Increment())
             {
                 UpdatePlayerState();
-
-                // destroy the snow that is colliding with the player
+                
+                // destroy the snow
                 Destroy(other.gameObject);
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Snowdrift"))
+        {
+            m_IsCollidingSnow = true;
+            m_CollidingSnow = other.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Snowdrift"))
+        {
+            m_IsCollidingSnow = false;
+            m_CollidingSnow = null;
+        }
     }
 
     // the player should change player states according to the snow inventory value
@@ -128,5 +159,9 @@ public class PlayerMovementBehavior : MonoBehaviour
         // change sprite
         var sprite = snowInventory.ToSprite();
         m_SpriteRenderer.sprite = sprite;
+
+        var modifier = snowInventory.ToColliderModifier();
+        m_Collider.size = modifier.Size;
+        m_Collider.offset = modifier.Offset;
     }
 }

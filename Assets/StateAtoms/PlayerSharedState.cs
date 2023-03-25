@@ -22,6 +22,12 @@ public enum PlayerOrientation
     Right
 }
 
+public struct PlayerColliderModifier
+{
+    public Vector2 Offset;
+    public Vector2 Size;
+}
+
 // have player snow inventory and scale player accordingly
 // map player snow inventory to corresponding scale
 public static class PlayerSnowInventoryExtensions
@@ -80,6 +86,39 @@ public static class PlayerSnowInventoryExtensions
         {
             Jump = 1.0f + inventoryMultiplier * (velocityMultiplier * 0.5f),
             Walk = 1.0f + inventoryMultiplier * velocityMultiplier
+        };
+    }
+    
+    public static PlayerColliderModifier ToColliderModifier(this PlayerSnowInventory inventory)
+    {
+        return inventory switch
+        {
+            PlayerSnowInventory.None => new PlayerColliderModifier
+            {
+                Offset = new Vector2(0.1266441f, -1.664455f),
+                Size = new Vector2(2.865166f, 3.671089f)
+            },
+            PlayerSnowInventory.One => new PlayerColliderModifier
+            {
+                Offset = new Vector2(0.08141708f, -0.9407792f),
+                Size = new Vector2(3.245094f, 5.118442f)
+            },
+            PlayerSnowInventory.Two => new PlayerColliderModifier
+            {
+                Offset = new Vector2(0.08141708f, -0.5518031f),
+                Size = new Vector2(3.679298f, 5.896394f)
+            },
+            PlayerSnowInventory.Three => new PlayerColliderModifier
+            {
+                Offset = new Vector2(0.1356926f, -0.2351947f),
+                Size = new Vector2(4.04113f, 6.529611f)
+            },
+            PlayerSnowInventory.Four => new PlayerColliderModifier
+            {
+                Offset = new Vector2(0, 0),
+                Size = new Vector2(5f, 7f)
+            },
+            _ => throw new ArgumentOutOfRangeException(nameof(inventory), inventory, null)
         };
     }
 }
