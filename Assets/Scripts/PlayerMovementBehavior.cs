@@ -12,21 +12,38 @@ public class PlayerMovementBehavior : MonoBehaviour
     public SpittedSnowBehavior spittedSnowPrefab;
 
     public Transform launchOffset;
+    public GameObject heatIndicator;
 
     public PlayerOrientation orientation = PlayerOrientation.Right;
 
     // snow inventory
     public PlayerSnowInventory snowInventory = PlayerSnowInventory.Four;
-
+    
     private readonly Vector3 m_CamOffset = new Vector3(+5.0f, +4.5f, -10);
 
     private Camera m_Cam;
     private BoxCollider2D m_Collider;
 
+    // snow collision
     private bool m_IsJumping;
-    private bool m_IsCollidingSnow = false;
-    private GameObject m_CollidingSnow = null;
-
+    private bool m_IsCollidingSnow;
+    private GameObject m_CollidingSnow;
+    
+    // heat
+    private int m_Heat;
+    
+    public int heat
+    {
+        get => m_Heat;
+        set
+        {
+            m_Heat = value;
+            // load sprite from Resources/Sprites/Player/heatwave_{heat}
+            var sprite = Resources.Load<Sprite>($"Sprites/Player/heatwave_{m_Heat.ToString()}");
+            heatIndicator.GetComponent<SpriteRenderer>().sprite = sprite;
+        }
+    }
+    
     // cached component members
     private Rigidbody2D m_Rigidbody2D;
     private SpriteRenderer m_SpriteRenderer;
@@ -154,7 +171,7 @@ public class PlayerMovementBehavior : MonoBehaviour
             m_CollidingSnow = null;
         }
     }
-    
+
     // the player should change player states according to the snow inventory value
     public void UpdatePlayerState()
     {

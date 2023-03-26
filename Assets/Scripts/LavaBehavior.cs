@@ -37,7 +37,30 @@ public class LavaBehavior : MonoBehaviour
     
     private IEnumerator WaitAndDecrementPlayerSnowInventory()
     {
-        yield return new WaitForSeconds(3);
+        DoDecrement();
+        // set a timer that triggers every 1 second.
+        // when the timer triggers, increment the player's heat by one
+        // when the player's heat >= 3, decrement the player's snow inventory, reset the player's heat to 0, and start the timer again
+        // when the player's snow inventory <= 0, end the game
+        while (true)
+        {
+            yield return new WaitForSeconds(0.75f);
+            if (m_PlayerMovementBehavior.heat >= 3)
+            {
+                m_PlayerMovementBehavior.heat = 0;
+                DoDecrement();
+            }
+            else
+            {
+                m_PlayerMovementBehavior.heat++;
+            }
+        }
+        
+        
+    }
+
+    private void DoDecrement()
+    {
         m_PlayerMovementBehavior.snowInventory.Decrement();
         m_PlayerMovementBehavior.UpdatePlayerState();
     }
