@@ -104,7 +104,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         else objectLaunchPos.x += launchOffset.localScale.x;
 
         // shooting projectile
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
             if (snowInventory.Decrement())
             {
                 var projectile = Instantiate(projectilePrefab, objectLaunchPos, transform.rotation);
@@ -114,7 +114,7 @@ public class PlayerMovementBehavior : MonoBehaviour
             }
 
         // use snow
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.S))
             if (snowInventory.Decrement())
             {
                 var spittedSnow = Instantiate(spittedSnowPrefab, objectLaunchPos, transform.rotation);
@@ -123,7 +123,7 @@ public class PlayerMovementBehavior : MonoBehaviour
                 UpdatePlayerState();
             }
 
-        if (m_IsCollidingSnow && Input.GetKeyDown(KeyCode.E))
+        if (m_IsCollidingSnow && Input.GetKeyDown(KeyCode.W))
         {
             if (snowInventory.Increment())
             {
