@@ -114,7 +114,7 @@ public class PlayerMovementBehavior : MonoBehaviour
             }
 
         // use snow
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.Q))
             if (snowInventory.Decrement())
             {
                 var spittedSnow = Instantiate(spittedSnowPrefab, objectLaunchPos, transform.rotation);
@@ -123,7 +123,7 @@ public class PlayerMovementBehavior : MonoBehaviour
                 UpdatePlayerState();
             }
 
-        if (m_IsCollidingSnow && Input.GetKeyDown(KeyCode.W))
+        if (m_IsCollidingSnow && Input.GetKeyDown(KeyCode.E))
         {
             if (snowInventory.Increment())
             {
