@@ -1,35 +1,46 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 public class InstructionBoard : MonoBehaviour
 {
     public GameObject InstructionUI;
     
-    public void UITurnOn()
+    private Animator m_Animator;
+    
+    private void Awake()
+    {
+        m_Animator = InstructionUI.GetComponent<Animator>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(FadeIn());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartCoroutine(FadeOut());
+        }
+    }
+
+    private IEnumerator FadeIn()
     {
         InstructionUI.SetActive(true);
-        Debug.Log("UI Open");
+        m_Animator.Play("TipsContainerFadeInAnimation");
+        yield return new WaitForSeconds(15.0f / 60.0f);
     }
-    public void UITurnOff()
+
+    private IEnumerator FadeOut()
     {
+        m_Animator.Play("TipsContainerFadeOutAnimation");
+        yield return new WaitForSeconds(15.0f / 60.0f);
         InstructionUI.SetActive(false);
-        Debug.Log("UI Close");
-    }
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            UITurnOn();
-        }
-
-    }
-
-    void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            UITurnOff();
-        }
-
     }
 }
 

@@ -61,7 +61,6 @@ public class LavaBehavior : MonoBehaviour
 
     private void DoDecrement()
     {
-        m_PlayerMovementBehavior.snowInventory.Decrement();
-        m_PlayerMovementBehavior.UpdatePlayerState();
+        m_PlayerMovementBehavior.OpponentDoDamage();
     }
 }

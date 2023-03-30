@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class PlayerMovementBehavior : MonoBehaviour
@@ -31,6 +32,11 @@ public class PlayerMovementBehavior : MonoBehaviour
     
     // heat
     private int m_Heat;
+    
+    // damage cooldown
+    [Tooltip("Minimum time in seconds between each damage taken allowed")]
+    public float damageCooldown = 0.5f;
+    private float m_LastDamageTime;
     
     public int heat
     {
@@ -182,5 +188,22 @@ public class PlayerMovementBehavior : MonoBehaviour
         var modifier = snowInventory.ToColliderModifier();
         m_Collider.size = modifier.Size;
         m_Collider.offset = modifier.Offset;
+    }
+
+    public void OpponentDoDamage(bool shouldObeyDamageCooldown = true)
+    {
+        if (shouldObeyDamageCooldown && Time.time - m_LastDamageTime < damageCooldown) return;
+        
+        m_LastDamageTime = Time.time;
+
+        if (snowInventory.Decrement())
+        {
+            UpdatePlayerState();
+        }
+        else
+        {
+            // unable to do decrement anymore: user is at minimum snow already. kill the player
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
