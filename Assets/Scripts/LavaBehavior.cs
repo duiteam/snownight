@@ -22,6 +22,11 @@ public class LavaBehavior : MonoBehaviour
             // wait for 3 seconds before decrementing the player's snow inventory
             m_WaitAndDecrementPlayerSnowInventoryCoroutine = StartCoroutine(WaitAndDecrementPlayerSnowInventory());
         }
+        if (other.gameObject.CompareTag("Collidable::CollectableSnow"))
+        {
+            Destroy(other.gameObject);
+        }
+
     }
     
     private void OnTriggerExit2D(Collider2D other)
