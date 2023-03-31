@@ -20,7 +20,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     // snow inventory
     public PlayerSnowInventory snowInventory = PlayerSnowInventory.Four;
     
-    private readonly Vector3 m_CamOffset = new Vector3(+5.0f, +4.5f, -10);
+    public Vector3 CamOffset = new Vector3(+5.0f, +4.5f, -10);
 
     private Camera m_Cam;
     private BoxCollider2D m_Collider;
@@ -92,9 +92,9 @@ public class PlayerMovementBehavior : MonoBehaviour
         var lerpT = 0.01f * velocityScale.Walk;
         var camTransformPos = m_Cam.transform.position;
         var transformPos = transform.position;
-        var lerpToX = Mathf.Lerp(camTransformPos.x, transformPos.x + m_CamOffset.x, lerpT);
-        var lerpToY = Mathf.Lerp(camTransformPos.y, transformPos.y + m_CamOffset.y, lerpT * 10);
-        var lerpToZ = Mathf.Lerp(camTransformPos.z, m_CamOffset.z, lerpT);
+        var lerpToX = Mathf.Lerp(camTransformPos.x, transformPos.x + CamOffset.x, lerpT);
+        var lerpToY = Mathf.Lerp(camTransformPos.y, transformPos.y + CamOffset.y, lerpT * 10);
+        var lerpToZ = Mathf.Lerp(camTransformPos.z, CamOffset.z, lerpT);
         m_Cam.transform.position = new Vector3(lerpToX, lerpToY, lerpToZ);
 
         // jump
