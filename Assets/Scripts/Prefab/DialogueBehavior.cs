@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(TextMeshProUGUI))]
 public class DialogueBehavior : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
@@ -15,6 +17,14 @@ public class DialogueBehavior : MonoBehaviour
     
     private Coroutine m_AnimCoroutine;
     private float currentDelay = 0.05f;
+    
+    // initial color
+    private Color m_InitialColor;
+    
+    private void Awake()
+    {
+        m_InitialColor = textDisplay.color;
+    }
 
     private void Start()
     {
@@ -39,8 +49,13 @@ public class DialogueBehavior : MonoBehaviour
         }
         else
         {
-            textDisplay.text = "";
+            NextScene();
         }
+    }
+    
+    private void NextScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private static string transformSentence(string sentence)
@@ -50,6 +65,8 @@ public class DialogueBehavior : MonoBehaviour
 
     private IEnumerator ChangeTextWithAnimation(string text)
     {
+        yield return FadeOutText();
+        
         var current = "";
         textDisplay.text = transformSentence(current);
         foreach (var c in text)
@@ -58,7 +75,21 @@ public class DialogueBehavior : MonoBehaviour
             textDisplay.text = transformSentence(current);
             yield return new WaitForSeconds(currentDelay);
         }
+        
         m_AnimCoroutine = null;
         currentDelay = 0.05f;
+    }
+
+    private IEnumerator FadeOutText()
+    {
+        var alpha = 1.0f;
+        while (alpha > 0.0f)
+        {
+            alpha -= 0.05f;
+            textDisplay.color = new Color(m_InitialColor.r, m_InitialColor.g, m_InitialColor.b, alpha);
+            yield return new WaitForSeconds(0.02f);
+        }
+        textDisplay.text = "";
+        textDisplay.color = new Color(m_InitialColor.r, m_InitialColor.g, m_InitialColor.b, 1.0f);
     }
 }

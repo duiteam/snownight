@@ -183,7 +183,7 @@ MonoBehaviour:
   m_text: "\u9000\u51FA"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
-  m_sharedMaterial: {fileID: 8144738187439009120, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
+  m_sharedMaterial: {fileID: 7612694237155010640, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -317,7 +317,7 @@ MonoBehaviour:
   m_text: "\u65B0\u6E38\u620F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
-  m_sharedMaterial: {fileID: 8144738187439009120, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
+  m_sharedMaterial: {fileID: 7612694237155010640, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1087,7 +1087,7 @@ MonoBehaviour:
   m_text: SNOWNIGHT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
-  m_sharedMaterial: {fileID: 8144738187439009120, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
+  m_sharedMaterial: {fileID: 7612694237155010640, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1622,7 +1622,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Level1-1
+          m_StringArgument: Dialogue0
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1586836454
@@ -1723,7 +1723,7 @@ MonoBehaviour:
   m_text: "\u96EA\u591C"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
-  m_sharedMaterial: {fileID: 8144738187439009120, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
+  m_sharedMaterial: {fileID: 7612694237155010640, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1857,7 +1857,7 @@ MonoBehaviour:
   m_text: "\u7EE7\u7EED\u4E0A\u6B21\u6E38\u620F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
-  m_sharedMaterial: {fileID: 8144738187439009120, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
+  m_sharedMaterial: {fileID: 7612694237155010640, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
