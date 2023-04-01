@@ -10,7 +10,7 @@ public class DialogueBehavior : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
     
-    [TextArea(3, 10)]
+    [TextArea(5, 12)]
     public string[] sentences;
     
     private string currentSentence;
