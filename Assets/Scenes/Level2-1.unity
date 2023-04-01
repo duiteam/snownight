@@ -2105,11 +2105,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3854378697659176229, guid: a880066b36da20d4981480b27a1c996f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -45.44
+      value: -13.72
       objectReference: {fileID: 0}
     - target: {fileID: 3854378697659176229, guid: a880066b36da20d4981480b27a1c996f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 11.8
       objectReference: {fileID: 0}
     - target: {fileID: 3854378697659176229, guid: a880066b36da20d4981480b27a1c996f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5173,7 +5173,7 @@ MonoBehaviour:
   upSpeed: 5
   maxDownDistance: 8
   isPlayerOnPlate: 0
-  reboundDelay: 0.5
+  reboundDelay: 1
 --- !u!1 &221141541
 GameObject:
   m_ObjectHideFlags: 0
