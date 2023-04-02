@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class SpittedSnowBehavior : MonoBehaviour
 {
@@ -32,12 +34,12 @@ public class SpittedSnowBehavior : MonoBehaviour
 
         m_StartTime = Time.time;
         m_InitialScale = transform.localScale.x;
+        StartCoroutine(DestroyObject());
     }
 
     private void Update()
     {
-        // destroy the snowball after a certain time
-        Destroy(gameObject, LifetimeSeconds);
+        
 
         // fade out the snowball
         var fadeoutTime = Mathf.Clamp(Time.time - m_StartTime - LifetimeSeconds + FadeoutTimeSeconds, 0,
@@ -46,7 +48,6 @@ public class SpittedSnowBehavior : MonoBehaviour
         var color = m_SpriteRenderer.color;
         color.a = fadeoutPercentage;
         m_SpriteRenderer.color = color;
-
         // resize the snowball
         transform.localScale = m_InitialScale * fadeoutPercentage * Vector3.one;
     }
@@ -56,5 +57,13 @@ public class SpittedSnowBehavior : MonoBehaviour
         if (col.gameObject.CompareTag("Env::Ground"))
             // stop the snowball from moving
             m_Rigidbody2D.velocity = Vector2.zero;
+    }
+
+    IEnumerator DestroyObject()
+    {
+        yield return new WaitForSeconds(LifetimeSeconds);
+        //Wait for LifetimeSeconds
+        transform.position = new Vector3(-10000.0f, -10000.0f, 0f);
+        Destroy(gameObject, 1.0f);
     }
 }
