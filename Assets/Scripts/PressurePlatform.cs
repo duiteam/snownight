@@ -1,73 +1,96 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PressurePlatform : MonoBehaviour
 {
-    public float downSpeed = 1f; // 下降速度
-    public float upSpeed = 1f; // 上升速度
-    public float maxDownDistance = 1f; // 最大下降距离
-    public bool isPlayerOnPlate = false; // 是否有玩家在平台上
-    public float reboundDelay = 1f; // 回弹延迟时间
+    public float downSpeed = 1f;
+    public float upSpeed = 1f;
+    public float maxDownDistance = 1f;
+    public bool isPlayerFollowingPlate;
+    public float reboundDelay = 1f;
 
-    private float initY; // 初始y轴坐标
+    private float initY;
+    
+    private SpriteRenderer m_SpriteRenderer;
+    
+    private PlayerMovementBehavior m_PlayerMovementBehavior;
+    
+    private Sprite m_InitialSprite;
 
     void Start()
     {
         initY = transform.position.y;
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        m_InitialSprite = m_SpriteRenderer.sprite;
     }
 
     void Update()
     {
-        if (isPlayerOnPlate)
+        m_SpriteRenderer.sprite = m_PlayerMovementBehavior != null
+            ? m_PlayerMovementBehavior.snowInventory.ToPlatformSprite()
+            : m_InitialSprite;
+
+        SetPlayerFollowingPlate(m_PlayerMovementBehavior != null && m_PlayerMovementBehavior.snowInventory >= PlayerSnowInventory.Three);
+
+        if (isPlayerFollowingPlate)
         {
-            // 计算下降距离
             float distance = Mathf.Clamp(initY - transform.position.y, 0, maxDownDistance);
 
-            // 计算下降速度
             float speed = downSpeed * (1 - distance / maxDownDistance);
 
-            // 下降
-            transform.Translate(Vector3.down * speed * Time.deltaTime);
+            transform.Translate(Vector3.down * (speed * Time.deltaTime));
         }
         else
         {
-            // 计算上升速度
             float speed = upSpeed;
 
-            // 上升
-            transform.Translate(Vector3.up * speed * Time.deltaTime);
+            transform.Translate(Vector3.up * (speed * Time.deltaTime));
 
-            // 到达初始高度后停止上升
             if (transform.position.y >= initY)
             {
                 transform.position = new Vector3(transform.position.x, initY, transform.position.z);
             }
         }
     }
+    
+    private void SetPlayerFollowingPlate(bool value)
+    {
+        if (value != isPlayerFollowingPlate && m_PlayerMovementBehavior != null)
+        {
+            switch (value)
+            {
+                case true:
+                    m_PlayerMovementBehavior.transform.SetParent(transform);
+                    break;
+                case false:
+                    m_PlayerMovementBehavior.transform.SetParent(null);
+                    break;
+            }
+        }
+        isPlayerFollowingPlate = value;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            isPlayerOnPlate = true;
-
-            collision.transform.SetParent(transform);
-        }
+        if (!collision.CompareTag("Player")) return;
+        m_PlayerMovementBehavior = collision.gameObject.GetComponent<PlayerMovementBehavior>();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            StartCoroutine(ReboundAfterDelay());
-            collision.transform.SetParent(null);
-        }
+        if (!collision.CompareTag("Player")) return;
+        
+        StartCoroutine(ReboundAfterDelay());
     }
-
-    public IEnumerator ReboundAfterDelay()
+    
+    private IEnumerator ReboundAfterDelay()
     {
         yield return new WaitForSeconds(reboundDelay);
-        isPlayerOnPlate = false;
+        isPlayerFollowingPlate = false;
+        
+        m_PlayerMovementBehavior.transform.SetParent(null);
+        m_PlayerMovementBehavior = null;
     }
 }

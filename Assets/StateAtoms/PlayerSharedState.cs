@@ -75,6 +75,19 @@ public static class PlayerSnowInventoryExtensions
             _ => throw new ArgumentOutOfRangeException(nameof(inventory), inventory, null)
         };
     }
+    
+    public static Sprite ToPlatformSprite(this PlayerSnowInventory inventory)
+    {
+        return inventory switch
+        {
+            PlayerSnowInventory.None => Resources.Load<Sprite>("SeparateSprite/PressurePlatform1"),
+            PlayerSnowInventory.One => Resources.Load<Sprite>("SeparateSprite/PressurePlatform2"),
+            PlayerSnowInventory.Two => Resources.Load<Sprite>("SeparateSprite/PressurePlatform3"),
+            PlayerSnowInventory.Three => Resources.Load<Sprite>("SeparateSprite/PressurePlatform4"),
+            PlayerSnowInventory.Four => Resources.Load<Sprite>("SeparateSprite/PressurePlatform4"),
+            _ => throw new ArgumentOutOfRangeException(nameof(inventory), inventory, null)
+        };
+    }
 
     public static PlayerVelocityScaleFactor ToVelocityScale(this PlayerSnowInventory inventory)
     {
