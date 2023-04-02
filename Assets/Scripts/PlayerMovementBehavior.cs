@@ -203,7 +203,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         else
         {
             // unable to do decrement anymore: user is at minimum snow already. kill the player
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            CustomSceneManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

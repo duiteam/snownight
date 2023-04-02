@@ -14,7 +14,8 @@ public class PauseMenu : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        CustomSceneManager.Instance.LoadScene("MainMenu");
+        Time.timeScale = 1f;
     }
 
     public void PauseMenuClose()

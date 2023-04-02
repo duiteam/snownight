@@ -12,23 +12,31 @@ public class DialogueBehavior : MonoBehaviour
     
     [TextArea(5, 12)]
     public string[] sentences;
-    
-    private string currentSentence;
-    
+
     private Coroutine m_AnimCoroutine;
     private float currentDelay = 0.05f;
     
     // initial color
     private Color m_InitialColor;
+
+    private string[] m_Sentences;
     
     private void Awake()
     {
         m_InitialColor = textDisplay.color;
+        // copy m_Sentences from sentences
+        Array.Resize(ref m_Sentences, sentences.Length);
+        Array.Copy(sentences, m_Sentences, sentences.Length);
+        
+        NextSentence();
     }
 
-    private void Start()
+    private void Update()
     {
-        NextSentence();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            NextSentence();
+        }
     }
 
     public void NextSentence()
@@ -39,23 +47,24 @@ public class DialogueBehavior : MonoBehaviour
             return;
         }
         
-        if (sentences.Length > 0)
+        if (m_Sentences.Length > 0)
         {
-            var text = sentences[0];
-            currentSentence = text;
+            var text = m_Sentences[0];
             m_AnimCoroutine = StartCoroutine(ChangeTextWithAnimation(text));
-            Array.Copy(sentences, 1, sentences, 0, sentences.Length - 1);
-            Array.Resize(ref sentences, sentences.Length - 1);
+            Array.Copy(m_Sentences, 1, m_Sentences, 0, m_Sentences.Length - 1);
+            Array.Resize(ref m_Sentences, m_Sentences.Length - 1);
         }
         else
         {
+            m_AnimCoroutine = null;
+            currentDelay = 0.05f;
             NextScene();
         }
     }
     
     private void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        CustomSceneManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     private static string transformSentence(string sentence)

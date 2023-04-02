@@ -5,13 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelCompleteMenu : MonoBehaviour
 {
-   public void LoadNextLevel()
+    public void LoadNextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        Time.timeScale = 1f;
+        CustomSceneManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
-
-    
-
-    
 }
-    
