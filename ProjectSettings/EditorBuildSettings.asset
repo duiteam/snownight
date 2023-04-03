@@ -48,9 +48,24 @@ EditorBuildSettings:
     path: Assets/Scenes/Dialogue5.unity
     guid: 4d83e351411d98448bfe70b7f8c31712
   - enabled: 1
+    path: Assets/Scenes/LevelEND.unity
+    guid: 09c05995c4d815a4aa09327007f0d00c
+  - enabled: 0
     path: Assets/Scenes/ScratchpadScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ScratchpadScene 2.unity
     guid: 441d459fa7fe750459c744198a50f002
+  - enabled: 1
+    path: Assets/Scenes/End1.unity
+    guid: ff3732fc99613da4f9edad320586fbc5
+  - enabled: 1
+    path: Assets/Scenes/End1BackToMenu.unity
+    guid: bf3b01e6f11a7a24ab5363a5fc2fc95b
+  - enabled: 1
+    path: Assets/Scenes/End2.unity
+    guid: 35c580f33018eee46bd34512086fac9f
+  - enabled: 1
+    path: Assets/Scenes/End2BackToMenu.unity
+    guid: bcc893b50e67aad419077044cc03dff2
   m_configObjects: {}
