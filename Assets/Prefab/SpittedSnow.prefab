@@ -136,5 +136,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Orientation: 0
   Speed: 1
-  LifetimeSeconds: 15
+  LifetimeSeconds: 20
   FadeoutTimeSeconds: 2
