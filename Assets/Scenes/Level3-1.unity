@@ -6401,7 +6401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2752638807539590228, guid: 9e161aecd3bf042aaa5352033855ea22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.02
+      value: -2.43
       objectReference: {fileID: 0}
     - target: {fileID: 2752638807539590228, guid: 9e161aecd3bf042aaa5352033855ea22, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19986,7 +19986,7 @@ GameObject:
   - component: {fileID: 1859827343}
   m_Layer: 0
   m_Name: HugeGround (7)
-  m_TagString: Untagged
+  m_TagString: Env::Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
