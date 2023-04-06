@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum EnemyDirection
@@ -54,15 +51,20 @@ public class EnemyBehavior : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Rigidbody2D playerRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
-            PlayerMovementBehavior playerMovementBehavior = other.gameObject.GetComponent<PlayerMovementBehavior>();
+            var playerRigidbody = other.gameObject.GetComponent<Rigidbody2D>();
+            var playerMovementBehavior = other.gameObject.GetComponent<PlayerMovementBehavior>();
             if (playerRigidbody != null)
             {
-                Vector2 knockbackDirection = DetermineKnockbackDirection(playerRigidbody.transform.position, transform.position);
-                Vector2 force = knockbackDirection * knockbackForce;
+                var knockbackDirection = DetermineKnockbackDirection(playerRigidbody.transform.position, transform.position);
+                var force = knockbackDirection * knockbackForce;
                 playerRigidbody.AddForce(force, ForceMode2D.Impulse);
                 playerMovementBehavior?.OpponentDoDamage();
             }
+        }
+
+        if (other.gameObject.CompareTag("Projectile"))
+        {
+            Destroy(gameObject);
         }
     }
 

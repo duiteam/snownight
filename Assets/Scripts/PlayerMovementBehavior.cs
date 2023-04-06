@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -83,7 +82,6 @@ public class PlayerMovementBehavior : MonoBehaviour
         transform.Translate(new Vector3(h, 0, 0) * (velocityScale.Walk * (Time.deltaTime * 5)));
         // m_Rigidbody2D.velocity = new Vector2(h * velocityScale.Walk * 5, m_Rigidbody2D.velocity.y);
         // m_Rigidbody2D.AddForce(new Vector2(h * velocityScale.Walk * 5, 0));
-        Debug.Log("setting velocity to (1) " + m_Rigidbody2D.velocity);
 
         // flip the player
         if (h < 0)
@@ -122,7 +120,6 @@ public class PlayerMovementBehavior : MonoBehaviour
 
         // m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, (Physics2D.gravity.y * (invertedGaussianFallMultiplier - 1) * Time.deltaTime));
         m_Rigidbody2D.AddForce(new Vector2(0, Physics2D.gravity.y * (invertedGaussianFallMultiplier - 1) * Time.deltaTime), ForceMode2D.Impulse);
-        Debug.Log("setting velocity to (2) " + m_Rigidbody2D.velocity);
 
         var objectLaunchPos = launchOffset.position;
         if (orientation == PlayerOrientation.Left) objectLaunchPos.x -= launchOffset.localScale.x;

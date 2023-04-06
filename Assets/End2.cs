@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,7 +7,7 @@ public class End2 : MonoBehaviour
     {
         if (coll.gameObject.CompareTag("Player"))
         {
-            Debug.Log("½á¾Ö2");
+            Debug.Log("ï½½çœ„ï¾–2");
             SceneManager.LoadScene("End2");
         }
     }
