@@ -3,9 +3,9 @@ using System.Collections;
 
 public class LevelNameFadeOut : MonoBehaviour
 {
-    public float fadeTime = 2f;  // µ­³öÊ±¼ä
-    public float timer = 0f;  // ¼ÆÊ±Æ÷
-    private SpriteRenderer spriteRenderer;  // Sprite Renderer×é¼þ
+    public float fadeTime = 2f;  // æ·¡å‡ºæ—¶é—´
+    public float timer = 0f;  // è®¡æ—¶å™¨
+    private SpriteRenderer spriteRenderer;  // Sprite Rendererç»„ä»¶
 
     void Start()
     {
