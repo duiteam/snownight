@@ -6,6 +6,7 @@ using UnityEngine.Serialization;
 public class PlayerMovementBehavior : MonoBehaviour
 {
     public float jumpForce = 2.5f;
+    public float fallingMultiplier = 2.5f;
 
     public ProjectileBehavior projectilePrefab;
 
@@ -63,6 +64,13 @@ public class PlayerMovementBehavior : MonoBehaviour
         // get the camera
         m_Cam = Camera.main;
     }
+    
+    private float gaussian(float x, float mu, float sigma)
+    {
+        var a = 1 / (sigma * Mathf.Sqrt(2 * Mathf.PI));
+        var b = -((x - mu) * (x - mu)) / (2 * sigma * sigma);
+        return a * Mathf.Exp(b);
+    }
 
     // Update is called once per frame
     private void Update()
@@ -73,6 +81,9 @@ public class PlayerMovementBehavior : MonoBehaviour
         // move the player horizontally
         var velocityScale = snowInventory.ToVelocityScale();
         transform.Translate(new Vector3(h, 0, 0) * (velocityScale.Walk * (Time.deltaTime * 5)));
+        // m_Rigidbody2D.velocity = new Vector2(h * velocityScale.Walk * 5, m_Rigidbody2D.velocity.y);
+        // m_Rigidbody2D.AddForce(new Vector2(h * velocityScale.Walk * 5, 0));
+        Debug.Log("setting velocity to (1) " + m_Rigidbody2D.velocity);
 
         // flip the player
         if (h < 0)
@@ -104,6 +115,14 @@ public class PlayerMovementBehavior : MonoBehaviour
             m_IsJumping = true;
             m_Rigidbody2D.AddForce(new Vector2(0, jumpForce * velocityScale.Jump), ForceMode2D.Impulse);
         }
+        
+        // fall faster
+        var fallVelocity = m_Rigidbody2D.velocity.y;
+        var invertedGaussianFallMultiplier = fallingMultiplier + (1 - gaussian(fallVelocity, -0.5f, 2));
+
+        // m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, (Physics2D.gravity.y * (invertedGaussianFallMultiplier - 1) * Time.deltaTime));
+        m_Rigidbody2D.AddForce(new Vector2(0, Physics2D.gravity.y * (invertedGaussianFallMultiplier - 1) * Time.deltaTime), ForceMode2D.Impulse);
+        Debug.Log("setting velocity to (2) " + m_Rigidbody2D.velocity);
 
         var objectLaunchPos = launchOffset.position;
         if (orientation == PlayerOrientation.Left) objectLaunchPos.x -= launchOffset.localScale.x;

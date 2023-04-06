@@ -99,13 +99,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8d272fb6acd4f48b48d543ca8aa522, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 7.5
+  jumpForce: 12
+  fallingMultiplier: 1.25
   projectilePrefab: {fileID: 5869759568116855110, guid: 6df090d0090b71c44be6ba24600b6f05, type: 3}
   spittedSnowPrefab: {fileID: -1539985736401984890, guid: 94323b193d18b4b5caa67c40b755b4f1, type: 3}
   launchOffset: {fileID: 3854378697912906594}
   heatIndicator: {fileID: 7064606946185074517}
   orientation: 1
   snowInventory: 4
+  CamOffset: {x: 5, y: 4.5, z: -10}
+  damageCooldown: 0.5
 --- !u!50 &3854378697659176250
 Rigidbody2D:
   serializedVersion: 4

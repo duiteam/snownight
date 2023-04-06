@@ -32,19 +32,6 @@ public struct PlayerColliderModifier
 // map player snow inventory to corresponding scale
 public static class PlayerSnowInventoryExtensions
 {
-    public static Vector3 ToColliderScale(this PlayerSnowInventory inventory)
-    {
-        return inventory switch
-        {
-            PlayerSnowInventory.None => new Vector3(1.0f, 0.6f, 1.0f),
-            PlayerSnowInventory.One => new Vector3(1.0f, 0.7f, 1.0f),
-            PlayerSnowInventory.Two => new Vector3(1.0f, 0.8f, 1.0f),
-            PlayerSnowInventory.Three => new Vector3(1.0f, 0.9f, 1.0f),
-            PlayerSnowInventory.Four => new Vector3(1.0f, 1.0f, 1.0f),
-            _ => throw new ArgumentOutOfRangeException(nameof(inventory), inventory, null)
-        };
-    }
-
     public static bool Increment(this ref PlayerSnowInventory inventory)
     {
         if (inventory >= PlayerSnowInventory.Four) return false;
@@ -91,7 +78,7 @@ public static class PlayerSnowInventoryExtensions
 
     public static PlayerVelocityScaleFactor ToVelocityScale(this PlayerSnowInventory inventory)
     {
-        const float velocityMultiplier = 0.2f;
+        const float velocityMultiplier = 0.15f;
 
         var inventoryMultiplier = 4 - (int)inventory;
 
