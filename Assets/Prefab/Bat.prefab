@@ -120,7 +120,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &5887327203323440674
 Animator:
-  serializedVersion: 5
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -133,12 +133,10 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &5887327203323440675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,8 +170,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.36987713, y: -0.04926734}
-  m_Size: {x: 4.5778337, y: 2.7303314}
+  m_Offset: {x: 0.36987716, y: 0.12818286}
+  m_Size: {x: 4.577835, y: 3.5709}
   m_Direction: 1
 --- !u!1 &5887327204657017961
 GameObject:
