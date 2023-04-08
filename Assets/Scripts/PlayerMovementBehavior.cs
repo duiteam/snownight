@@ -23,7 +23,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     public Vector3 CamOffset = new Vector3(+5.0f, +4.5f, -10);
 
     private Camera m_Cam;
-    private BoxCollider2D m_Collider;
+    private CapsuleCollider2D m_Collider;
 
     // snow collision
     private bool m_IsJumping;
@@ -58,7 +58,7 @@ public class PlayerMovementBehavior : MonoBehaviour
     private void Start()
     {
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
-        m_Collider = GetComponent<BoxCollider2D>();
+        m_Collider = GetComponent<CapsuleCollider2D>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         // get the camera
         m_Cam = Camera.main;
@@ -159,7 +159,19 @@ public class PlayerMovementBehavior : MonoBehaviour
     // on collision enter
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Env::Ground")) m_IsJumping = false;
+        if (other.gameObject.CompareTag("Env::Ground") && other.contactCount > 0)
+        {
+            foreach (var contact in other.contacts)
+            {
+                var normal = contact.normal;
+                var topEdge = DetectCollisionTopEdge(normal);
+                if (topEdge)
+                {
+                    m_IsJumping = false;
+                }
+                Debug.Log("Collided with " + other.gameObject.name + " at " + contact.point + " with normal " + normal);
+            }
+        }
 
         // pick up snow
         // if (Input.GetKeyDown(KeyCode.E))
@@ -221,5 +233,10 @@ public class PlayerMovementBehavior : MonoBehaviour
             // unable to do decrement anymore: user is at minimum snow already. kill the player
             CustomSceneManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+    }
+    
+    bool DetectCollisionTopEdge(Vector2 normal)
+    {
+        return normal.y > 0.75f;
     }
 }

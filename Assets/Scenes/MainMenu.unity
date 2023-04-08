@@ -581,7 +581,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Made with \u2665\nTeam \u961F, 2023"
+  m_text: "Made with Love\nTeam \u961F, 2023"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
   m_sharedMaterial: {fileID: 7612694237155010640, guid: 7aa3b50f5e30b4f78aac9356e202b959, type: 2}
