@@ -237,6 +237,6 @@ public class PlayerMovementBehavior : MonoBehaviour
     
     bool DetectCollisionTopEdge(Vector2 normal)
     {
-        return normal.y > 0.75f;
+        return normal.y >= 0.1f;
     }
 }
