@@ -871,5 +871,45 @@ PrefabInstance:
       propertyPath: background
       value: 
       objectReference: {fileID: 1627008055}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[0]
+      value: "[UseBackground:Sprites/Plots/be1]\n\u3002\u3002\u3002\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[1]
+      value: "[UseBackground:Sprites/Plots/be2]\n\u5BF9\u4E0D\u8D77\uFF0C\u7238\u7238\u5988\u5988"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[2]
+      value: "[UseBackground:Sprites/Plots/be2]\n\u8FD9\u6837\u7684\u73B0\u5B9E\u5BF9\u6211\u6765\u8BF4\u592A\u75DB\u82E6\u4E86"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[3]
+      value: "[UseBackground:Sprites/Plots/be3]\n\u6211\u8FD8\u662F\u3002\u3002\u613F\u610F\u505A\u90A3\u4E2A\u5FEB\u4E50\u7684\u5C0F\u96EA\u4EBA"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[4]
+      value: "[UseBackground:Sprites/Plots/be4]\n\u7EE7\u7EED\u90A3\u4E2A\u3002\u3002\u6C38\u8FDC\u4E0D\u4F1A\u9192\u6765\u7684\u7F8E\u68A6"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[5]
+      value: "[UseBackground:Sprites/Plots/be5]\n\u3002\u3002\u3002\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[6]
+      value: "[UseBackground:Sprites/Plots/be5]\n\u3002\u3002"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[7]
+      value: "\u662F\u5417\uFF0C\u4F60\u9009\u62E9\u7EE7\u7EED\u8BA9\u4ED6\u7EE7\u7EED\u9003\u907F\u73B0\u65F6\u7684\u82E6\u75DB\u5417"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[8]
+      value: "\u662F\u5417\uFF0C\u4F60\u9009\u62E9\u7EE7\u7EED\u8BA9\u4ED6\u7EE7\u7EED\u9003\u907F\u73B0\u65F6\u7684\u82E6\u75DB\u5417"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}

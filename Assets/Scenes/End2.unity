@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1055445874}
     m_Modifications:
+    - target: {fileID: 4399108979291595706, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979291595706, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: m_fontColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979291595706, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979291595707, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0000038146973
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979291595707, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4399108979645228052, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -167,43 +187,49 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2119418472}
     - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
       propertyPath: segments.Array.data[0]
-      value: '[UseBackground:Sprites/Plots/ge1]
-
-        Text 1-1'
+      value: '[UseBackground:Sprites/Plots/ge1]'
       objectReference: {fileID: 0}
     - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
       propertyPath: segments.Array.data[1]
-      value: '[UseBackground:Sprites/Plots/ge2]
-
-        Text 2-1'
+      value: "[UseBackground:Sprites/Plots/ge2]\n\u8FD9\u91CC\u600E\u4E48\u6709\u4E2A\u5B69\u5B50\u8EBA\u5728\u8FD9\u91CC\uFF1F\uFF01\n\u518D\u8FD9\u4E48\u4E0B\u53BB\u4F1A\u51BB\u6B7B\u7684\uFF01"
       objectReference: {fileID: 0}
     - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
       propertyPath: segments.Array.data[2]
-      value: '[UseBackground:Sprites/Plots/ge2]
-
-        Text 2-2'
+      value: "[UseBackground:Sprites/Plots/ge2]\n\u4ED6\u5DF2\u7ECF\u6CA1\u6709\u610F\u8BC6\u4E86\n\u5FEB\u53EB120\uFF01\n"
       objectReference: {fileID: 0}
     - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
       propertyPath: segments.Array.data[3]
-      value: '[UseBackground:Sprites/Plots/ge2]
+      value: '[UseBackground:Sprites/Plots/ge3]
 
-        Text 2-3'
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
       propertyPath: segments.Array.data[4]
-      value: '[UseBackground:Sprites/Plots/ge3]
-
-        Text 3-1'
+      value: '[UseBackground:Sprites/Plots/ge4]'
       objectReference: {fileID: 0}
     - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
       propertyPath: segments.Array.data[5]
-      value: '[UseBackground:Sprites/Plots/ge4]
-
-        Text 4-1'
+      value: '[UseBackground:Sprites/Plots/ge5]'
       objectReference: {fileID: 0}
     - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
       propertyPath: segments.Array.data[6]
+      value: '[UseBackground:Sprites/Plots/ge5]
+
+        Text 5-1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[7]
+      value: '[UseBackground:Sprites/Plots/ge5]
+
+        Text 5-1'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4399108979645228055, guid: 88c31750f7e76ab44905cbbba7623b3a, type: 3}
+      propertyPath: segments.Array.data[8]
       value: '[UseBackground:Sprites/Plots/ge5]
 
         Text 5-1'
