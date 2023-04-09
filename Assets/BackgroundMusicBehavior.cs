@@ -46,12 +46,15 @@ public class BackgroundMusicBehavior : MonoBehaviour
     
     private string GetMusicNameForSceneIndex(int sceneIndex)
     {
+        if (sceneIndex == 0 && SceneManager.GetSceneByName(CustomSceneManager.Instance.GetSavedSceneName()).buildIndex >= 13)
+        {
+            return "1"; // if already saw the ending, play the ending music
+        }
         return sceneIndex switch
         {
-            _ when sceneIndex < 11 => "0",
-            _ when sceneIndex == 11 => null,
-            _ when sceneIndex <= 23 => "1",
-            _ => null,
+            _ when sceneIndex <= 11 => "0",
+            _ when sceneIndex == 12 => null,
+            _ => "1",
         };
     }
     

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,14 +25,27 @@ public class CustomSceneManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
-        SaveScene(sceneName);
+        StartCoroutine(DoLoadScene(sceneName));
     }
     
     public void LoadScene(int sceneIndex)
     {
+        StartCoroutine(DoLoadScene(sceneIndex));
+    }
+    private IEnumerator DoLoadScene(string sceneName)
+    {
+        yield return FindObjectOfType<LevelLoaderBehavior>().StartFadeOut();
+        SceneManager.LoadScene(sceneName);
+        SaveScene(sceneName);
+        yield return FindObjectOfType<LevelLoaderBehavior>().StartFadeIn();
+    }
+    
+    private IEnumerator DoLoadScene(int sceneIndex)
+    {
+        yield return FindObjectOfType<LevelLoaderBehavior>().StartFadeOut();
         SceneManager.LoadScene(sceneIndex);
         SaveScene(SceneManager.GetSceneByBuildIndex(sceneIndex).name);
+        yield return FindObjectOfType<LevelLoaderBehavior>().StartFadeIn();
     }
 
     private static void SaveScene(string sceneName)

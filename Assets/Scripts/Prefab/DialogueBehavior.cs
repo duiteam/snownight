@@ -4,7 +4,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-[RequireComponent(typeof(TextMeshProUGUI))]
 public class DialogueBehavior : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
