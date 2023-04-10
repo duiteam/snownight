@@ -46,7 +46,7 @@ public class BackgroundMusicBehavior : MonoBehaviour
     
     private string GetMusicNameForSceneIndex(int sceneIndex)
     {
-        if (sceneIndex == 0 && SceneManager.GetSceneByName(CustomSceneManager.Instance.GetSavedSceneName()).buildIndex >= 13)
+        if (sceneIndex == 0 && CustomSceneManager.Instance.GetSavedSceneIndex() >= 13)
         {
             return "1"; // if already saw the ending, play the ending music
         }

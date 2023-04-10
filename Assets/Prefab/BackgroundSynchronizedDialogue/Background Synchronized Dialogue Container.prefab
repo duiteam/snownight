@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 4399108979291595706}
+  disableSpeedUp: 1
   segments:
   - '[UseBackground:Sprites/Plots/be1]
 

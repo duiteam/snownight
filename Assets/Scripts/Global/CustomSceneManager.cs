@@ -36,7 +36,7 @@ public class CustomSceneManager : MonoBehaviour
     {
         yield return FindObjectOfType<LevelLoaderBehavior>().StartFadeOut();
         SceneManager.LoadScene(sceneName);
-        SaveScene(sceneName);
+        SaveScene(SceneManager.GetSceneByName(sceneName));
         yield return FindObjectOfType<LevelLoaderBehavior>().StartFadeIn();
     }
     
@@ -44,27 +44,37 @@ public class CustomSceneManager : MonoBehaviour
     {
         yield return FindObjectOfType<LevelLoaderBehavior>().StartFadeOut();
         SceneManager.LoadScene(sceneIndex);
-        SaveScene(SceneManager.GetSceneByBuildIndex(sceneIndex).name);
+        SaveScene(SceneManager.GetSceneByBuildIndex(sceneIndex));
         yield return FindObjectOfType<LevelLoaderBehavior>().StartFadeIn();
     }
 
-    private static void SaveScene(string sceneName)
+    private static void SaveScene(Scene scene)
     {
-        if (Instance.blockSceneNames.Contains(sceneName)) return;
-        PlayerPrefs.SetString("SavedScene", sceneName);
+        if (Instance.blockSceneNames.Contains(scene.name)) return;
+        PlayerPrefs.SetString("SavedSceneName", scene.name);
+        PlayerPrefs.SetInt("SavedSceneIndex", scene.buildIndex);
         PlayerPrefs.Save();
     }
 
     public string GetSavedSceneName()
     {
-        if (PlayerPrefs.HasKey("SavedScene"))
+        if (PlayerPrefs.HasKey("SavedSceneName"))
         {
-            return PlayerPrefs.GetString("SavedScene");
+            return PlayerPrefs.GetString("SavedSceneName");
         }
-        else
+
+        Debug.LogWarning("No saved scene found!");
+        return null;
+    }
+    
+    public int GetSavedSceneIndex()
+    {
+        if (PlayerPrefs.HasKey("SavedSceneIndex"))
         {
-            Debug.LogWarning("No saved scene found!");
-            return null;
+            return PlayerPrefs.GetInt("SavedSceneIndex");
         }
+
+        Debug.LogWarning("No saved scene found!");
+        return -1;
     }
 }

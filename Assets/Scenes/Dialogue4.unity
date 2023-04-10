@@ -479,8 +479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 150, y: 0}
-  m_SizeDelta: {x: 350, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1126, y: -240}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1138879339
 MonoBehaviour:
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 0
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 31.000885, z: -825.76373, w: 32.54782}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -699,8 +699,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -511, y: -78}
-  m_SizeDelta: {x: -165.00014, y: 768}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 768}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1707464459
 CanvasGroup:
@@ -727,6 +727,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textDisplay: {fileID: 1138879339}
+  disableSpeedUp: 1
   sentences:
   - "\u600E\u4E48\u56DE\u4E8B\u3002\u3002\u3002\u3002\r\n"
   - "\u8FD9\u672C\u7AE5\u8BDD\u7684\u7ED3\u5C40\u600E\u4E48\u4F1A\u662F\u8FD9\u6837\u3002\u3002\u3002\n\u8FD9\u548C\u6211\u5370\u8C61\u4E2D\u7684\u3002\u3002\u3002\u5B8C\u5168\u4E0D\u4E00\u6837\u3002\u3002\u3002\u3002\u3002"

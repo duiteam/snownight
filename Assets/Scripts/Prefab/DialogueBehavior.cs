@@ -8,11 +8,13 @@ public class DialogueBehavior : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
     
+    public bool disableSpeedUp;
+    
     [TextArea(5, 12)]
     public string[] sentences;
 
     private Coroutine m_AnimCoroutine;
-    private float currentDelay = 0.05f;
+    private float m_CurrentDelay = 0.05f;
     
     // initial color
     private Color m_InitialColor;
@@ -41,7 +43,11 @@ public class DialogueBehavior : MonoBehaviour
     {
         if (m_AnimCoroutine != null)
         {
-            currentDelay = 0.002f;
+            if (disableSpeedUp)
+            {
+                return;
+            }
+            m_CurrentDelay = 0.002f;
             return;
         }
         
@@ -55,7 +61,7 @@ public class DialogueBehavior : MonoBehaviour
         else
         {
             m_AnimCoroutine = null;
-            currentDelay = 0.05f;
+            m_CurrentDelay = 0.05f;
             NextScene();
         }
     }
@@ -80,11 +86,18 @@ public class DialogueBehavior : MonoBehaviour
         {
             current += c;
             textDisplay.text = transformSentence(current);
-            yield return new WaitForSeconds(currentDelay);
+            if (c == '\n')
+            {
+                yield return new WaitForSeconds(m_CurrentDelay * 5);
+            }
+            else
+            {
+                yield return new WaitForSeconds(m_CurrentDelay);
+            }
         }
         
         m_AnimCoroutine = null;
-        currentDelay = 0.05f;
+        m_CurrentDelay = 0.05f;
     }
 
     private IEnumerator FadeOutText()

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,8 @@ using UnityEngine.UI;
 public class BackgroundSynchronizedDialogueBehavior : MonoBehaviour
 {
     public TextMeshProUGUI textDisplay;
+    
+    public bool disableSpeedUp;
     
     [TextArea(5, 12)]
     [Tooltip("The text segments to be displayed. Each segment will be displayed in a separate screen.\n" +
@@ -50,6 +53,10 @@ public class BackgroundSynchronizedDialogueBehavior : MonoBehaviour
     {
         if (m_AnimCoroutine != null)
         {
+            if (disableSpeedUp)
+            {
+                return;
+            }
             m_CurrentDelay = 0.002f;
             return;
         }
@@ -108,7 +115,6 @@ public class BackgroundSynchronizedDialogueBehavior : MonoBehaviour
         
         // join the remaining lines
         text = string.Join("\n", lines);
-
         
         var current = "";
         textDisplay.text = transformSentence(current);
@@ -116,7 +122,14 @@ public class BackgroundSynchronizedDialogueBehavior : MonoBehaviour
         {
             current += c;
             textDisplay.text = transformSentence(current);
-            yield return new WaitForSeconds(m_CurrentDelay);
+            if (c == '\n')
+            {
+                yield return new WaitForSeconds(m_CurrentDelay * 5);
+            }
+            else
+            {
+                yield return new WaitForSeconds(m_CurrentDelay);
+            }
         }
         
         m_AnimCoroutine = null;
