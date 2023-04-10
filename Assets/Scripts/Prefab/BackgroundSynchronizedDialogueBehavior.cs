@@ -124,7 +124,7 @@ public class BackgroundSynchronizedDialogueBehavior : MonoBehaviour
             textDisplay.text = transformSentence(current);
             if (c == '\n')
             {
-                yield return new WaitForSeconds(m_CurrentDelay * 5);
+                yield return new WaitForSeconds(m_CurrentDelay * 15);
             }
             else
             {
