@@ -1,12 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class BackgroundMusicBehavior : MonoBehaviour
 {
-    private AudioSource m_AudioSource;
+    public AudioSource bgmAudioSource;
+    public AudioSource ambientAudioSource;
     
     public static BackgroundMusicBehavior Instance { get; private set; }
 
@@ -21,8 +24,6 @@ public class BackgroundMusicBehavior : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        
-        m_AudioSource = GetComponent<AudioSource>();
         
         // subscribe to SceneManager.sceneLoaded
         // when SceneManager.sceneLoaded is called, call the OnSceneLoaded method
@@ -41,10 +42,11 @@ public class BackgroundMusicBehavior : MonoBehaviour
 
     private void OnActiveSceneChanged(Scene prevScene, Scene nextScene)
     {
-        ChangeMusic(GetMusicNameForSceneIndex(nextScene.buildIndex));
+        ChangeBGMMusic(GetBGMMusicNameForSceneIndex(nextScene.buildIndex));
+        ChangeAmbientMusic(GetAmbientMusicNameForSceneIndex(nextScene.name));
     }
     
-    private string GetMusicNameForSceneIndex(int sceneIndex)
+    private static string GetBGMMusicNameForSceneIndex(int sceneIndex)
     {
         if (sceneIndex == 0 && CustomSceneManager.Instance.GetSavedSceneIndex() >= 13)
         {
@@ -58,21 +60,48 @@ public class BackgroundMusicBehavior : MonoBehaviour
         };
     }
     
-    private void ChangeMusic(string musicName)
+    private static string GetAmbientMusicNameForSceneIndex(string sceneName)
     {
-        if (m_AudioSource.clip && m_AudioSource.clip.name == musicName)
+        return sceneName switch
+        {
+            // match sceneName to regex Level\d-\d
+            _ when Regex.IsMatch(sceneName, @"Level\d-\d") => "wind",
+            _ => null,
+        };
+    }
+    
+    private void ChangeBGMMusic(string musicName)
+    {
+        if (bgmAudioSource.clip && bgmAudioSource.clip.name == musicName)
         {
             return;
         }
         
-        if (m_AudioSource.isPlaying)
+        if (bgmAudioSource.isPlaying)
         {
-            m_AudioSource.Stop();
+            bgmAudioSource.Stop();
         }
 
         var resources = Resources.Load<AudioClip>($"Audio/BGM/{musicName}");
-        m_AudioSource.clip = resources;
-        m_AudioSource.Play();
+        bgmAudioSource.clip = resources;
+        bgmAudioSource.Play();
+    }
+    
+    private void ChangeAmbientMusic(string musicName)
+    {
+        if (ambientAudioSource.clip && ambientAudioSource.clip.name == musicName)
+        {
+            return;
+        }
+        
+        if (ambientAudioSource.isPlaying)
+        {
+            ambientAudioSource.Stop();
+        }
+
+        var resources = Resources.Load<AudioClip>($"Audio/Ambient/{musicName}");
+        ambientAudioSource.clip = resources;
+        ambientAudioSource.Play();
     }
     
     
