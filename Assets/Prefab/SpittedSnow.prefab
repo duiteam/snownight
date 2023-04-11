@@ -137,4 +137,4 @@ MonoBehaviour:
   Orientation: 0
   Speed: 1
   LifetimeSeconds: 20
-  FadeoutTimeSeconds: 2
+  FadeoutTimeSeconds: 5

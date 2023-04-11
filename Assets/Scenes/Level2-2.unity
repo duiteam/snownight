@@ -19590,6 +19590,10 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 160
       objectReference: {fileID: 0}
+    - target: {fileID: 3858875609937304534, guid: 06398c5c45a59394ba2001222c3c8091, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06398c5c45a59394ba2001222c3c8091, type: 3}
 --- !u!1 &1583935943
