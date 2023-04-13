@@ -35,6 +35,8 @@ public static class PlayerSnowInventoryExtensions
     public static bool Increment(this ref PlayerSnowInventory inventory)
     {
         if (inventory >= PlayerSnowInventory.Four) return false;
+        
+        SFXBehavior.Instance.PlaySFX(SFXTracks.GotSnowball);
 
         inventory++;
 

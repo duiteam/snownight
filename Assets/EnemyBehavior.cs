@@ -64,6 +64,7 @@ public class EnemyBehavior : MonoBehaviour
 
         if (other.gameObject.CompareTag("Projectile"))
         {
+            SFXBehavior.Instance.PlaySFX(SFXTracks.MonsterDead);
             Destroy(gameObject);
         }
     }

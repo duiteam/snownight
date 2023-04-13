@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ public class ContinueButtonBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        var savedSceneName = CustomSceneManager.Instance.GetSavedSceneName();
+        var savedSceneName = CustomSceneManager.GetSavedSceneName();
         continueButton.interactable = savedSceneName != null;
         // grey out the button if there is no saved scene
         if (!continueButton.interactable)

@@ -11,7 +11,6 @@ public class Door : MonoBehaviour
 
     private void Start()
     {
-        button.requirement = false;
         m_Collider = GetComponent<Collider2D>();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_InitialPosition = transform.position;

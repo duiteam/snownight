@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class BackgroundMusicBehavior : MonoBehaviour
 {
@@ -48,7 +44,7 @@ public class BackgroundMusicBehavior : MonoBehaviour
     
     private static string GetBGMMusicNameForSceneIndex(int sceneIndex)
     {
-        if (sceneIndex == 0 && CustomSceneManager.Instance.GetSavedSceneIndex() >= 13)
+        if (sceneIndex == 0 && CustomSceneManager.GetSavedSceneIndex() >= 13)
         {
             return "1"; // if already saw the ending, play the ending music
         }

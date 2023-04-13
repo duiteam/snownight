@@ -1,7 +1,27 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    public Image m_Background;
+
+    private void Awake()
+    {
+        var name = CustomSceneManager.GetSavedSceneName();
+        Debug.Log("Saved scene name: " + name);
+        if (name != null)
+        {
+            if (name == "End1BackToMenu")
+            {
+                m_Background.sprite = Resources.Load<Sprite>("SeparateSprite/menubg_be");
+            } else if (name == "End2BackToMenu")
+            {
+                m_Background.sprite = Resources.Load<Sprite>("SeparateSprite/menubg_ge");
+            }
+        }
+    }
+
     public void GoToScene(string sceneName)
     {
         CustomSceneManager.Instance.LoadScene(sceneName);
@@ -9,7 +29,7 @@ public class MainMenu : MonoBehaviour
     
     public void ContinueGame()
     {
-        var savedSceneName = CustomSceneManager.Instance.GetSavedSceneName();
+        var savedSceneName = CustomSceneManager.GetSavedSceneName();
         Debug.Log("Saved scene name: " + savedSceneName);
         if (savedSceneName != null) CustomSceneManager.Instance.LoadScene(savedSceneName);
     }

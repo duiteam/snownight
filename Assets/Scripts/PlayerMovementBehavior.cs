@@ -129,6 +129,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
             if (snowInventory.Decrement())
             {
+                SFXBehavior.Instance.PlaySFX(SFXTracks.ProjectileImpact);
                 var projectile = Instantiate(projectilePrefab, objectLaunchPos, transform.rotation);
                 projectile.Orientation = orientation;
 
@@ -139,6 +140,7 @@ public class PlayerMovementBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
             if (snowInventory.Decrement())
             {
+                SFXBehavior.Instance.PlaySFX(SFXTracks.SpitSnowball);
                 var spittedSnow = Instantiate(spittedSnowPrefab, objectLaunchPos, transform.rotation);
                 spittedSnow.Orientation = orientation;
 

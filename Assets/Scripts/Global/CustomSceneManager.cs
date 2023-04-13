@@ -56,7 +56,7 @@ public class CustomSceneManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public string GetSavedSceneName()
+    public static string GetSavedSceneName()
     {
         if (PlayerPrefs.HasKey("SavedSceneName"))
         {
@@ -67,7 +67,7 @@ public class CustomSceneManager : MonoBehaviour
         return null;
     }
     
-    public int GetSavedSceneIndex()
+    public static int GetSavedSceneIndex()
     {
         if (PlayerPrefs.HasKey("SavedSceneIndex"))
         {

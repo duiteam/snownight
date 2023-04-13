@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class BatBehavior : MonoBehaviour
 {
@@ -75,6 +74,7 @@ public class BatBehavior : MonoBehaviour
 
         if (other.gameObject.CompareTag("Projectile"))
         {
+            SFXBehavior.Instance.PlaySFX(SFXTracks.BatDead);
             Destroy(gameObject);
         }
     }
