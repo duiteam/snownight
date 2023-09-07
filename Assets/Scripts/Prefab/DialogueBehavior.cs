@@ -24,6 +24,8 @@ public class DialogueBehavior : MonoBehaviour
     private GameObject m_CurrentAdornmentViewGameObject;
     private float m_CurrentDelay = 0.05f;
 
+    // currently on-hold coroutine, if any. If there's any on-hold coroutine, before
+    // it has finished running, the player cannot press space nor use other controls to continue
     private Coroutine m_OnHoldCoroutine;
 
     private void Awake()
