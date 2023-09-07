@@ -89,7 +89,11 @@ public class Puzzles
 
 public class PuzzleController : MonoBehaviour
 {
+    // an OnPuzzleSolved trigger that will be called when the puzzle is solved
+    public delegate void PuzzleSolvedDelegate();
+
     public string puzzleConfigName;
+
     private CanvasGroup m_GlowLargeCanvasGroup;
 
     private RectTransform m_RectTransform;
@@ -101,12 +105,15 @@ public class PuzzleController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        OnPuzzleSolved += () => Debug.Log("Puzzle solved!");
         puzzle = Puzzles.instance.Get(puzzleConfigName);
         m_RectTransform = GetComponent<RectTransform>();
         m_GlowLargeCanvasGroup = transform.Find("GlowLarge").gameObject.GetComponent<CanvasGroup>();
 
         SummonChildPuzzlePieces();
     }
+
+    public event PuzzleSolvedDelegate OnPuzzleSolved;
 
     private void SummonChildPuzzlePieces()
     {
@@ -143,7 +150,7 @@ public class PuzzleController : MonoBehaviour
     {
         if (puzzle.IsSolved())
         {
-            Debug.Log("Puzzle solved!");
+            OnPuzzleSolved?.Invoke();
             Invoke(nameof(StartGlowLarge), 0.5f);
 
             // list all puzzle piece game objects under this puzzle controller
