@@ -74,11 +74,19 @@ public class Puzzle
 
 public class Puzzles
 {
-    public static readonly Puzzles instance = new Puzzles();
+    public static readonly Puzzles instance = new();
 
-    private readonly Dictionary<string, Puzzle> puzzles = new Dictionary<string, Puzzle>
+    private readonly Dictionary<string, Puzzle> puzzles = new()
     {
-        { "Test", new Puzzle("TestPuzzle", new Vector2(3, 3)) }
+        { "1", new Puzzle("1", new Vector2(3, 3)) },
+        { "2", new Puzzle("2", new Vector2(3, 3)) },
+        { "3", new Puzzle("3", new Vector2(3, 3)) },
+        { "4", new Puzzle("4", new Vector2(3, 3)) },
+        { "5", new Puzzle("5", new Vector2(3, 3)) },
+        { "6", new Puzzle("6", new Vector2(3, 3)) },
+        { "7", new Puzzle("7", new Vector2(3, 3)) },
+        { "8", new Puzzle("8", new Vector2(3, 3)) },
+        { "9", new Puzzle("9", new Vector2(3, 3)) }
     };
 
     public Puzzle Get(string name)

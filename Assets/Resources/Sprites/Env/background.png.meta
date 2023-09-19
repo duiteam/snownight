@@ -66,6 +66,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -132,6 +133,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -449,6 +462,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      BlueDoor: 1316490896907413468
+      BluePressureButton: 7898562296661958002
+      BreakWallBackground: -3192133289119773823
+      BrickPlatform: -6344343437890535301
+      BrickPlatformSnow: 7001778013311136900
+      BrickWallBackground2: 986969114328154071
+      Door: 8900154682771799127
+      GreenDoor: 2415078317887781457
+      GreenPressureButton: 8343477328892443928
+      GroundNoSnow: 4372148480733514280
+      RedDoor: 1405897620634370583
+      RedPressureButton: 3970015981214305365
+      Tree: -7443756053782179069
+      Wall: 4328097311078286071
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

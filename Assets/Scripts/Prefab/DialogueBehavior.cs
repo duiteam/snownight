@@ -15,7 +15,7 @@ public class DialogueBehavior : MonoBehaviour
 
     [TextArea(5, 12)] public string[] sentences;
 
-    private readonly List<List<DialogueChunk>> m_AllDialogueChunks = new List<List<DialogueChunk>>();
+    private readonly List<List<DialogueChunk>> m_AllDialogueChunks = new();
 
     // canvas group
     private CanvasGroup m_CanvasGroup;
