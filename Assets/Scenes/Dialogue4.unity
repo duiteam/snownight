@@ -151,6 +151,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1055445874}
   m_RootOrder: 0
@@ -226,6 +227,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2005783198}
   m_RootOrder: 0
@@ -367,6 +369,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 744896382}
   - {fileID: 1707464458}
@@ -409,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -441,6 +445,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -473,6 +478,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1707464458}
   m_RootOrder: 0
@@ -658,6 +664,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -692,6 +699,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1138879338}
   m_Father: {fileID: 1055445874}
@@ -731,8 +739,10 @@ MonoBehaviour:
   sentences:
   - "\u600E\u4E48\u56DE\u4E8B\u3002\u3002\u3002\u3002\r\n"
   - "\u8FD9\u672C\u7AE5\u8BDD\u7684\u7ED3\u5C40\u600E\u4E48\u4F1A\u662F\u8FD9\u6837\u3002\u3002\u3002\n\u8FD9\u548C\u6211\u5370\u8C61\u4E2D\u7684\u3002\u3002\u3002\u5B8C\u5168\u4E0D\u4E00\u6837\u3002\u3002\u3002\u3002\u3002"
-  - "\u4E0D\u5BF9\u3002\u3002\u3002\u3002\u8FD9\u4E00\u5207\u7684\u4E00\u5207\u3002\u3002\u3002\u90FD\u4E0E\u6211\u5370\u8C61\u4E2D\u3002\u3002\u3002\u5B8C\u5168\u4E0D\u4E00\u6837\r\n\u8FD9\u91CC\u3002\u3002\u3002\u3002\u771F\u7684\u662F\u73B0\u5B9E\u5417\u3002\u3002\u3002\u3002\u3002\r\n\u3002\u3002\u3002\u3002\u3002\u3002\u3002\u3002\r\n\u3002\u3002\u3002\u3002\u3002\u3002\u3002\r\n"
-  - "\u54E6\r\n\u8FD9\u6837\u554A\r\n\u6211\u60F3\u8D77\u6765\u4E86\n\u539F\u6765\u3002\u3002\u3002\u8FD9\u4E00\u5207\u7684\u90FD\u662F\u5047\u7684\r\n\u6839\u672C\u6CA1\u6709\u4EC0\u4E48\u96EA\u4E4B\u56FD\u5EA6\r\n\u6211\u7684\u7236\u6BCD\uFF0C\u4E5F\u5DF2\u7ECF\u4E0D\u5728\u4E86\n\u3002\u3002\u3002\u3002\n\u3002\u3002"
+  - "\u4E0D\u5BF9\u3002\u3002\u3002\u3002\u8FD9\u4E00\u5207\u7684\u4E00\u5207\u3002\u3002\u3002\u90FD\u4E0E\u6211\u5370\u8C61\u4E2D\u3002\u3002\u3002\u5B8C\u5168\u4E0D\u4E00\u6837\r\n\u8FD9\u91CC\u3002\u3002\u3002\u3002\u662F\u73B0\u5B9E\u5417\u3002\u3002\u3002\u3002\u3002\r\n\u3002\u3002\u3002\u3002\u3002\u3002\u3002\u3002\r\n\u3002\u3002\u3002\u3002\u3002\u3002\u3002\r\n"
+  - "\u54E6\r\n\u539F\u6765\u662F\u8FD9\u6837\r\n\u8FD9\u4E00\u5207\u7684\u90FD\u662F\u5047\u7684\u3002\u3002\u3002\r"
+  - "\u6839\u672C\u6CA1\u6709\u4EC0\u4E48\u96EA\u4E4B\u56FD\u5EA6\u3002\u3002\r\n\u6211\u7684\u7236\u6BCD\uFF0C\u4E5F\u5DF2\u7ECF\u4E0D\u5728\u4E86\u3002\u3002\u3002\r\n"
+  - "\u800C\u6211\u3002\u3002\u3002\u3002\u5E94\u8BE5\u4E5F\u5FEB\u3002\u3002\u3002\u3002\u3002\r\n\u3002\u3002\u3002\u3002\u3002\r\n\u3002\u3002\r"
 --- !u!114 &1707464461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -859,6 +869,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1052625606}
   m_Father: {fileID: 1055445874}
