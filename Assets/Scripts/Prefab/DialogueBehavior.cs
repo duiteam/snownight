@@ -98,7 +98,7 @@ public class DialogueBehavior : MonoBehaviour
         m_CurrentDelay = 0.05f;
         m_OnHoldCoroutine = null;
 
-        var lastChunkIsText = dialogueChunks[dialogueChunks.Count - 1] is DialogueChunkText;
+        var lastChunkIsText = dialogueChunks[^1] is DialogueChunkText;
         if (!lastChunkIsText) NextSentence();
     }
 
@@ -134,11 +134,13 @@ public class DialogueBehavior : MonoBehaviour
         var isSolved = false;
         controller.OnPuzzleSolved += () => isSolved = true;
         yield return new WaitUntil(() => isSolved);
+
+        yield return new WaitForSeconds(1.5f);
     }
 
     private IEnumerator RenderDialogueChunkAdornmentSprite(DialogueChunkAdornmentSprite dialogueChunkAdornmentSprite)
     {
-        DestroyAdornmentViewIfExists();
+        yield return DestroyAdornmentViewIfExists();
 
         var sprite = dialogueChunkAdornmentSprite.GetSprite();
 
@@ -153,7 +155,7 @@ public class DialogueBehavior : MonoBehaviour
 
         m_CurrentAdornmentViewGameObject = gameObject;
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(1.5f);
     }
 
     private IEnumerator DestroyAdornmentViewIfExists()
