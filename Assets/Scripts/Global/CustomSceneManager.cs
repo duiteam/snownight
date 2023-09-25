@@ -55,7 +55,7 @@ public class CustomSceneManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public static string GetSavedSceneName()
+    public string GetSavedSceneName()
     {
         if (PlayerPrefs.HasKey("SavedSceneName")) return PlayerPrefs.GetString("SavedSceneName");
 
@@ -63,7 +63,7 @@ public class CustomSceneManager : MonoBehaviour
         return null;
     }
 
-    public static int GetSavedSceneIndex()
+    public int GetSavedSceneIndex()
     {
         if (PlayerPrefs.HasKey("SavedSceneIndex")) return PlayerPrefs.GetInt("SavedSceneIndex");
 
@@ -71,7 +71,7 @@ public class CustomSceneManager : MonoBehaviour
         return -1;
     }
 
-    public static string GetSavedGameVersion()
+    public string GetSavedGameVersion()
     {
         if (PlayerPrefs.HasKey("SavedGameVersion")) return PlayerPrefs.GetString("SavedGameVersion");
 
@@ -79,7 +79,7 @@ public class CustomSceneManager : MonoBehaviour
         return null;
     }
 
-    private static void GuardAgainstMismatchedGameVersion()
+    private void GuardAgainstMismatchedGameVersion()
     {
         if (GetSavedGameVersion() == Application.version) return;
 

@@ -41,7 +41,7 @@ public class BackgroundMusicBehavior : MonoBehaviour
     private static string GetBGMMusicNameForSceneIndex(int sceneIndex)
     {
         if (sceneIndex == 0 &&
-            CustomSceneManager.GetSavedSceneIndex() >=
+            CustomSceneManager.Instance.GetSavedSceneIndex() >=
             13) return "3真相"; // if already saw the ending, play the ending music
 
         return sceneIndex switch
